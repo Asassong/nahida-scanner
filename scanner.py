@@ -168,10 +168,7 @@ def parse(decrypt_key):
                                 for prop in sub_prop_list:
                                     sub_prop = sub_prop_dict[str(prop)]
                                     for key, value in sub_prop.items():
-                                        if value.endswith("%"):
-                                            value = percent_convert_decimal(value)
-                                        else:
-                                            value = int(value)
+                                        value = float(value)
                                         if key in 副属性:
                                             副属性[key] += value
                                         else:
